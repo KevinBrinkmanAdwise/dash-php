@@ -1,4 +1,9 @@
 <?php include("inc/header.php"); ?>
+<?php
+        $url = "https://jsonplaceholder.typicode.com/todos/1";
+        $data = json_decode(file_get_contents($url), true)
+?>
+
 
 <div class="col-10" id="main">
   <div class="row">
@@ -6,13 +11,13 @@
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card-dashboard">
         <h3>Totaal aantal tickets</h3>
-        <p class="total-text">1000</p>
+        <p class="total-text"><?php echo "id: ", $data['userId']; ?></p>
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card-dashboard">
         <h3>Totaal aantal nieuwe tickets</h3>
-        <p class="total-text">1</p>
+        <p class="total-text"><?php echo "Title: ", $data['title'];?></p>
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
